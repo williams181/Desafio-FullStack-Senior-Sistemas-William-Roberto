@@ -1,0 +1,15 @@
+/* cadastro-contato.component.css */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    margin-top: 20px;
+  }
+  
