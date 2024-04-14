@@ -1,16 +1,20 @@
 package model;
-
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
+@Table(name = "contato")
 public class Contato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nome_completo")
     private String nomeCompleto;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "telefone")
     private String telefone;
 
     @ManyToOne
@@ -55,18 +59,6 @@ public class Contato {
     }
 
     public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    // Construtor vazio
-    public Contato() {
-    }
-
-    // Construtor com todos os campos
-    public Contato(String nomeCompleto, String email, String telefone, Cliente cliente) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.telefone = telefone;
         this.cliente = cliente;
     }
 }

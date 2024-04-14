@@ -1,36 +1,46 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { CadastroCliente } from './cadastro-cliente.model';
+import { CadastroClienteService } from './cadastro-cliente.service';
 
 @Component({
-  selector: 'app-cadastro-cliente',
+  selector: 'cadastro-cliente',
+  standalone: false,
+  // imports: [RouterOutlet],
   templateUrl: './cadastro-cliente.component.html',
-  styleUrl: './cadastro-cliente.component.css'
+  styleUrls: ['./cadastro-cliente.component.css']
 })
 
 export class CadastroClienteComponent {
-  constructor() { }
-  // clientes = [
-  //   {
-  //     nomeCompleto: 'João Silva',
-  //     email: 'joao@email.com',
-  //     telefone: '(11) 98765-4321',
-  //     dataRegistro: new Date('2024-04-15')
-  //   },
-  //   {
-  //     nomeCompleto: 'Maria Souza',
-  //     email: 'maria@email.com',
-  //     telefone: '(11) 98765-1234',
-  //     dataRegistro: new Date('2024-04-16')
-  //   }
-  //   // Adicione mais clientes conforme necessário
-  // ];
+  clientes: CadastroCliente[] = [];
+  novoCliente: CadastroCliente = new CadastroCliente();
 
-  // editarCliente(cliente: any) {
-  //   // Lógica para editar o cliente
-  //   console.log('Editar cliente:', cliente);
-  // }
+  constructor(private cadastroClienteService: CadastroClienteService) {}
 
-  // deletarCliente(cliente: any) {
-  //   // Lógica para deletar o cliente
-  //   console.log('Deletar cliente:', cliente);
-  // }
+  ngOnInit() {
+    this.listarClientes();
+  }
+
+  listarClientes() {
+    this.cadastroClienteService.listarClientes()
+      .subscribe(clientes => this.clientes = clientes);
+  }
+
+  salvarCliente() {
+    this.cadastroClienteService.salvarCliente(this.novoCliente)
+      .subscribe(() => {
+        this.listarClientes();
+        this.novoCliente = new CadastroCliente();
+      });
+  }
+
+  editarCliente(cliente: CadastroCliente) {
+  }
+
+  deletarCliente(cliente: CadastroCliente) {
+    this.cadastroClienteService.deletarCliente(cliente.id)
+      .subscribe(() => {
+        this.listarClientes();
+      });
+  }
 }

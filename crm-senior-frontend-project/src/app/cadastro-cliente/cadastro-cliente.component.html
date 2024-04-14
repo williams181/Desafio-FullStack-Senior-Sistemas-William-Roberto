@@ -1,53 +1,95 @@
-<!-- cadastro-cliente.component.html -->
-<div class="container">
-    <h1>Cadastro de Cliente</h1>
-    <form>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">Desafio Senior Sistemas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/">Pagina Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cadastro-cliente">Painel dos Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cadastro-contato">Painel dos Contatos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<br>
+
+  <!-- <div class="container">
+    <h3 class="display-10">Cadastro de Clientes</h3>
+    <form (ngSubmit)="salvarCliente()">
       <div class="form-group">
         <label for="nomeCompleto">Nome Completo</label>
-        <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required>
+        <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required
+              [(ngModel)]="novoCliente.nomeCompleto" name="nomeCompleto">
       </div>
+      <br>
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required>
+        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required
+              [(ngModel)]="novoCliente.email" name="email">
       </div>
+      <br>
       <div class="form-group">
         <label for="telefone">Telefone</label>
-        <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required>
+        <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required
+              [(ngModel)]="novoCliente.telefone" name="telefone">
       </div>
+      <br>
       <div class="form-group">
         <label for="dataRegistro">Data de Registro</label>
-        <input type="date" class="form-control" id="dataRegistro" required>
+        <input type="date" class="form-control" id="dataRegistro" required
+              [(ngModel)]="novoCliente.dataRegistro" name="dataRegistro">
       </div>
+      <br>
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
+  </div> -->
+
+
+    <br>
+
+    <div class="container">
+      <h3 class="display-10">Lista de Clientes</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome Completo</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Data de Registro</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.nomeCompleto }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>{{ cliente.dataRegistro }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" >Editar</button>
+              <button class="btn btn-danger btn-sm" >Deletar</button>
+            </td>
+          </tr>  
+        </tbody>
+      </table>
+    </div>
+
+<br>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">© 2024 Desafio Senior sistemas</span>
   </div>
-
-<!-- cadastro-cliente-lista.component.html -->
-<div class="container">
-  <h1>Lista de Clientes</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nome Completo</th>
-        <th>E-mail</th>
-        <th>Telefone</th>
-        <th>Data de Registro</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cliente of clientes">
-        <!-- <td>{{ cliente.nomeCompleto }}</td>
-        <td>{{ cliente.email }}</td>
-        <td>{{ cliente.telefone }}</td>
-        <td>{{ cliente.dataRegistro | date }}</td> -->
-        <td>
-          <!-- <button class="btn btn-primary btn-sm" (click)="editarCliente(cliente)">Editar</button>
-          <button class="btn btn-danger btn-sm" (click)="deletarCliente(cliente)">Deletar</button> -->
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-  
+</footer>

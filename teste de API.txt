@@ -1,0 +1,19 @@
+# Exemplo de JSON para Cliente:
+
+{
+  "nomeCompleto": "João Silva",
+  "email": "joao.silva@example.com",
+  "telefone": "(11) 9999-9999",
+  "dataRegistro": "2022-04-13"
+}
+
+# Exemplo de JSON para Contato (associado a um Cliente específico):
+
+{
+  "nomeCompleto": "Maria Oliveira",
+  "email": "maria.oliveira@example.com",
+  "telefone": "(11) 8888-8888",
+  "cliente": {
+    "id": 1
+  }
+}

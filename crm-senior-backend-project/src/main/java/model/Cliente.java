@@ -1,25 +1,30 @@
 package model;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CascadeType;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "cliente")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nome_completo")
     private String nomeCompleto;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<Contato> contatos;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Contato> contatos = new ArrayList<>();
 
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "telefone")
     private String telefone;
 
-    @Temporal(TemporalType.DATE)
+    @Column(name = "data_registro")
     private Date dataRegistro;
 
     // Getters e Setters
@@ -68,19 +73,6 @@ public class Cliente {
     }
 
     public void setDataRegistro(Date dataRegistro) {
-        this.dataRegistro = dataRegistro;
-    }
-
-    // Construtor vazio
-    public Cliente() {
-    }
-
-    // Construtor com todos os campos
-    public Cliente(String nomeCompleto, List<Contato> contatos, String email, String telefone, Date dataRegistro) {
-        this.nomeCompleto = nomeCompleto;
-        this.contatos = contatos;
-        this.email = email;
-        this.telefone = telefone;
         this.dataRegistro = dataRegistro;
     }
 }

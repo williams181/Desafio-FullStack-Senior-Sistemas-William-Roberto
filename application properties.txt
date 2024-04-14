@@ -1,5 +1,5 @@
 spring.application.name=crm-senior-backend-project
-spring.datasource.url=jdbc:mysql://localhost:3306/clientes
+spring.datasource.url=jdbc:mysql\://localhost\:3306/clientes
 spring.datasource.username=root
 spring.datasource.password=
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
