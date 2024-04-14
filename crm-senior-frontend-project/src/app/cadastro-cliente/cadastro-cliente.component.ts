@@ -12,9 +12,12 @@ import { CadastroClienteService } from './cadastro-cliente.service';
 })
 
 export class CadastroClienteComponent {
+
   clientes: CadastroCliente[] = [];
   novoCliente: CadastroCliente = new CadastroCliente();
 
+  name_test: String = "";
+  
   constructor(private cadastroClienteService: CadastroClienteService) {}
 
   ngOnInit() {
@@ -24,6 +27,11 @@ export class CadastroClienteComponent {
   listarClientes() {
     this.cadastroClienteService.listarClientes()
       .subscribe(clientes => this.clientes = clientes);
+  }
+
+  onSubmit() {
+    alert('test');
+    console.log('Form submitted successfully!');
   }
 
   salvarCliente() {

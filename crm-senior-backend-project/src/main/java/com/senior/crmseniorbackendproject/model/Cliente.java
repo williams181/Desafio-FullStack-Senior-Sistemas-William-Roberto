@@ -1,4 +1,4 @@
-package model;
+package com.senior.crmseniorbackendproject.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -27,7 +27,6 @@ public class Cliente {
     @Column(name = "data_registro")
     private Date dataRegistro;
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }

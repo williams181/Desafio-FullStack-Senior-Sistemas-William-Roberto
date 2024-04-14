@@ -1,10 +1,8 @@
 # Desafio-FullStack-Senior-Sistemas-William-Roberto
 Este repositório contem a verão criada por William Roberto para o desafio "Desenvolvedor FullStack" na Sénior Sistemas
 
-Claro! Aqui está um exemplo básico de como você pode estruturar a documentação em um arquivo `README.md` para o seu projeto:
-
 ```markdown
-# Nome do Projeto
+# Desafio Senior Sistemas William Roberto
 
 Descrição curta ou resumo do seu projeto.
 
@@ -14,10 +12,11 @@ Uma descrição mais detalhada do que o projeto faz, suas funcionalidades princi
 
 ## Tecnologias Utilizadas
 
-- Java
+- Java 17 ou superior
 - Spring Boot
-- MySQL (ou outra base de dados utilizada)
-- HTML/CSS (ou outra tecnologia de front-end, se aplicável)
+- MySQL
+- node.js
+- angular
 
 ## Funcionalidades
 
@@ -33,8 +32,8 @@ Uma descrição mais detalhada do que o projeto faz, suas funcionalidades princi
 
 ### Back End 
 
-- Java 11 ou superior 
-- MySQL (banco de dados)
+- Java 17 ou superior 
+- MySQL
 
 ### Front End
 
@@ -43,10 +42,16 @@ Uma descrição mais detalhada do que o projeto faz, suas funcionalidades princi
 
 ### Passos para Instalação
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/seu-projeto.git`
-2. Entre na pasta do projeto: `cd seu-projeto`
+1. Clone o repositório: `git clone https://github.com/williams181/Desafio-FullStack-Senior-Sistemas-William-Roberto`
+2. Entre na pasta do projeto: `cd Desafio-FullStack-Senior-Sistemas-William-Roberto`
 3. Configure o arquivo `application.properties` com as informações do seu banco de dados.
 4. Execute o projeto: `./mvnw spring-boot:run`
+
+### Execução do projeto
+
+### Back-end
+
+1.  Entre na pasta do projeto: `cd crm-senior-backend-project` e execute `mvn spring-boot:run`
 
 ## Licença
 
@@ -54,9 +59,5 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ## Contato
 
-- Seu Nome - [Seu Email](mailto:seu@email.com)
+- William Roberto - [E-mail](mailto:william.roberto39@hotmail.com)
 ```
-
-Este é apenas um exemplo básico. Você pode personalizar e expandir conforme necessário para atender às especificidades do seu projeto. Certifique-se de incluir informações importantes sobre como instalar, configurar e executar o seu projeto, bem como uma breve descrição das tecnologias utilizadas e como contribuir, se for um projeto de código aberto.
-
-Se precisar de mais alguma coisa ou de ajuda para elaborar algum outro tipo de documentação, é só chamar!

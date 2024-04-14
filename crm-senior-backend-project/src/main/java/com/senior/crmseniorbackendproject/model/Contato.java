@@ -1,4 +1,4 @@
-package model;
+package com.senior.crmseniorbackendproject.model;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,7 +21,6 @@ public class Contato {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }

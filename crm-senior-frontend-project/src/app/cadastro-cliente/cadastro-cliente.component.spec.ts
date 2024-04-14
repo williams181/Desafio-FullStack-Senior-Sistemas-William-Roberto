@@ -8,7 +8,7 @@ describe('CadastroClienteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CadastroClienteComponent]
+      declarations: [CadastroClienteComponent]
     })
     .compileComponents();
     

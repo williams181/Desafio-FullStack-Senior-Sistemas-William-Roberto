@@ -13,8 +13,8 @@ import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.co
 
 export const routes: Routes = [
     { path: '', component: PrincipalComponent }, 
-    { path: '/cadastro-cliente', component: CadastroClienteComponent },
-    { path: '/cadastro-contato', component: CadastroContatoComponent }
+    { path: 'cadastro-cliente', component: CadastroClienteComponent },
+    { path: 'cadastro-contato', component: CadastroContatoComponent }
 ];
 
 @NgModule({

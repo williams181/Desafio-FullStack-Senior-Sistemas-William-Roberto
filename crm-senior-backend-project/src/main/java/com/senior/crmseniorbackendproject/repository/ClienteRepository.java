@@ -1,6 +1,6 @@
-package repository;
+package com.senior.crmseniorbackendproject.repository;
 
-import model.Cliente;
+import com.senior.crmseniorbackendproject.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
