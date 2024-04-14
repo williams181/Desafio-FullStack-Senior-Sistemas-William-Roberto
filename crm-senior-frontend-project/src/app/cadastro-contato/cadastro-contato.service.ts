@@ -7,7 +7,7 @@ import { CadastroContato } from './cadastro-contato.model';
   providedIn: 'root'
 })
 export class CadastroContatoService {
-  private apiUrl = 'http://localhost:8080/contatos'; 
+  private apiUrl = 'http://localhost:8080/contato'; 
 
   constructor(private http: HttpClient) {}
 

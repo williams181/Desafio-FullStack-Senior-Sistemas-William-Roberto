@@ -12,7 +12,7 @@ import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.co
 import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.component';
 
 export const routes: Routes = [
-    { path: '', component: PrincipalComponent }, 
+    { path: 'app-principal', component: PrincipalComponent }, 
     { path: 'cadastro-cliente', component: CadastroClienteComponent },
     { path: 'cadastro-contato', component: CadastroContatoComponent }
 ];

@@ -25,27 +25,58 @@
 
   <br>
 
-    <div class="container">
-      <h3 class="display-10">Cadastro de Contatos</h3>
-      <form>
-        <div class="form-group">
-          <label for="nomeCompleto">Nome Completo</label>
-          <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required>
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required>
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-      </form>
-    </div>
+  <div class="container">
+    <h3 class="display-10">Cadastro de Contatos</h3>
+    <form>
+      <div class="form-group">
+        <label for="nomeCompleto">Nome Completo</label>
+        <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required
+               name="nomeCompleto">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required
+               name="email">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required
+               name="telefone">
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+
+
+  <!-- <div class="container">
+    <h3 class="display-10">Cadastro de Contatos</h3>
+    <form (ngSubmit)="salvarContato()">
+      <div class="form-group">
+        <label for="nomeCompleto">Nome Completo</label>
+        <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required
+              [(ngModel)]="novoContato.nomeCompleto" name="nomeCompleto">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required
+              [(ngModel)]="novoContato.email" name="email">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required
+              [(ngModel)]="novoContato.telefone" name="telefone">
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div> -->
 
     <br>
 
@@ -68,6 +99,8 @@
             <td>
               <button class="btn btn-primary btn-sm" >Editar</button>
               <button class="btn btn-danger btn-sm" >Deletar</button>
+              <!-- <button class="btn btn-primary btn-sm" (click)="editarContato(contato)">Editar</button>
+              <button class="btn btn-danger btn-sm" (click)="deletarContato(contato)">Deletar</button> -->
             </td>
           </tr>  
         </tbody>

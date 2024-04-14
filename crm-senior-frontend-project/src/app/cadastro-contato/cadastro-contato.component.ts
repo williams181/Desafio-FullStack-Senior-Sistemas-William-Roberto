@@ -4,7 +4,7 @@ import { CadastroContato } from './cadastro-contato.model';
 import { CadastroContatoService } from './cadastro-contato.service';
 
 @Component({
-  selector: 'app-cadastro-contato',
+  selector: 'cadastro-contato',
   standalone: false,
   // imports: [RouterOutlet],
   templateUrl: './cadastro-contato.component.html',

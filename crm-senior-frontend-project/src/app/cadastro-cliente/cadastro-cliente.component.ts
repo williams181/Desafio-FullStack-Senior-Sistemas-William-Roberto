@@ -15,8 +15,6 @@ export class CadastroClienteComponent {
 
   clientes: CadastroCliente[] = [];
   novoCliente: CadastroCliente = new CadastroCliente();
-
-  name_test: String = "";
   
   constructor(private cadastroClienteService: CadastroClienteService) {}
 
@@ -29,11 +27,6 @@ export class CadastroClienteComponent {
       .subscribe(clientes => this.clientes = clientes);
   }
 
-  onSubmit() {
-    alert('test');
-    console.log('Form submitted successfully!');
-  }
-
   salvarCliente() {
     this.cadastroClienteService.salvarCliente(this.novoCliente)
       .subscribe(() => {
@@ -43,6 +36,7 @@ export class CadastroClienteComponent {
   }
 
   editarCliente(cliente: CadastroCliente) {
+    // Lógica para edição de cliente
   }
 
   deletarCliente(cliente: CadastroCliente) {

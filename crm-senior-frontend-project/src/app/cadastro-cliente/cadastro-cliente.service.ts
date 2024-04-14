@@ -8,15 +8,13 @@ import { CadastroCliente } from './cadastro-cliente.model';
 })
 
 export class CadastroClienteService {
-  
-  private apiUrl = 'http://localhost:8080/cliente'; 
+
+  private apiUrl = 'http://localhost:8080/cliente';
 
   constructor(private http: HttpClient) {}
 
   listarClientes(): Observable<CadastroCliente[]> {
-    const url = `${this.apiUrl}/listar`;
-    console.log(url)
-    return this.http.get<CadastroCliente[]>(url);
+    return this.http.get<CadastroCliente[]>(this.apiUrl);
   }
 
   obterCliente(id: number): Observable<CadastroCliente> {
@@ -25,17 +23,16 @@ export class CadastroClienteService {
   }
 
   salvarCliente(cliente: CadastroCliente): Observable<CadastroCliente> {
-    const url = `${this.apiUrl}/salvar`;
-    return this.http.post<CadastroCliente>(url, cliente);
+    return this.http.post<CadastroCliente>(this.apiUrl, cliente);
   }
 
   atualizarCliente(cliente: CadastroCliente): Observable<CadastroCliente> {
-    const url = `${this.apiUrl}/editar/${cliente.id}`;
+    const url = `${this.apiUrl}/${cliente.id}`;
     return this.http.put<CadastroCliente>(url, cliente);
   }
 
   deletarCliente(id: number): Observable<any> {
-    const url = `${this.apiUrl}/excluir/${id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
   }
 }

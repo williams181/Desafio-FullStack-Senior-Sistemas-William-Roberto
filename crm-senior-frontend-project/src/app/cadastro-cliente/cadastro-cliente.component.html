@@ -25,7 +25,34 @@
 
 <br>
 
-  <div class="container">
+<div class="container">
+  <h3 class="display-10">Cadastro de Clientes</h3>
+  <form>
+    <div class="form-group">
+      <label for="nomeCompleto">Nome Completo</label>
+      <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="dataRegistro">Data de Registro</label>
+      <input type="date" class="form-control" id="dataRegistro" required>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary">Cadastrar</button>
+  </form>
+</div>
+
+  <!-- <div class="container">
     <h3 class="display-10">Cadastro de Clientes</h3>
     <form (ngSubmit)="salvarCliente()">
       <div class="form-group">
@@ -52,10 +79,9 @@
               [(ngModel)]="novoCliente.dataRegistro" name="dataRegistro">
       </div>
       <br>
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="button" class="btn btn-primary" (click)="salvarCliente()">Cadastrar</button>
     </form>
-  </div>
-
+  </div>  -->
 
     <br>
 
@@ -80,6 +106,8 @@
             <td>
               <button class="btn btn-primary btn-sm" >Editar</button>
               <button class="btn btn-danger btn-sm" >Deletar</button>
+              <!-- <button class="btn btn-primary btn-sm" (click)="editarCliente(cliente)">Editar</button>
+              <button class="btn btn-danger btn-sm" (click)="deletarCliente(cliente)">Deletar</button> -->
             </td>
           </tr>  
         </tbody>
