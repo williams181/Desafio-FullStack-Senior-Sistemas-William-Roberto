@@ -12,12 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contato")
+@CrossOrigin(origins = "*")
 public class ContatoController {
 
     @Autowired
     private ContatoRepository contatoRepository;
 
     @GetMapping("/listar")
+    @CrossOrigin(origins = "*")
     public ResponseEntity listarContatos() {
         List<Contato> contatos = contatoRepository.findAll();
         return ResponseEntity.ok(contatos);

@@ -10,6 +10,7 @@ import { CadastroContatoService } from './cadastro-contato.service';
   templateUrl: './cadastro-contato.component.html',
   styleUrl: './cadastro-contato.component.css'
 })
+
 export class CadastroContatoComponent {
   
   contatos: CadastroContato[] = [];
@@ -22,8 +23,16 @@ export class CadastroContatoComponent {
   }
 
   listarContatos() {
-    this.cadastroContatoService.listarContatos()
-      .subscribe(contatos => this.contatos = contatos);
+    this.cadastroContatoService.listarContatosService()
+      .subscribe(
+        (contatos) => {
+          this.contatos = contatos;
+          console.log(contatos); // Verifique se os dados estão chegando aqui
+        },
+        (error) => {
+          console.error(error); // Em caso de erros
+        }
+      );
   }
 
   salvarContato() {

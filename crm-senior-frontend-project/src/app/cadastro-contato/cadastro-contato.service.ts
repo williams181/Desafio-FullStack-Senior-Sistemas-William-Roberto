@@ -7,12 +7,14 @@ import { CadastroContato } from './cadastro-contato.model';
   providedIn: 'root'
 })
 export class CadastroContatoService {
-  private apiUrl = 'http://localhost:8080/contato'; 
+
+  private apiUrl = '/api/contato';
 
   constructor(private http: HttpClient) {}
 
-  listarContatos(): Observable<CadastroContato[]> {
-    return this.http.get<CadastroContato[]>(this.apiUrl);
+  listarContatosService(): Observable<CadastroContato[]> {
+    const url = `${this.apiUrl}/listar`; // Adicionando /listar ao caminho base
+    return this.http.get<CadastroContato[]>(url);
   }
 
   obterContato(id: number): Observable<CadastroContato> {

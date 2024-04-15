@@ -24,7 +24,9 @@ export class CadastroClienteComponent {
 
   listarClientes() {
     this.cadastroClienteService.listarClientes()
+    
       .subscribe(clientes => this.clientes = clientes);
+      console.log(this.clientes)
   }
 
   salvarCliente() {
@@ -36,7 +38,6 @@ export class CadastroClienteComponent {
   }
 
   editarCliente(cliente: CadastroCliente) {
-    // Lógica para edição de cliente
   }
 
   deletarCliente(cliente: CadastroCliente) {
